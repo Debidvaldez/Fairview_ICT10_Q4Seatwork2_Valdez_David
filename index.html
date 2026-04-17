@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <link rel="stylesheet" href="https://pyscript.net/releases/2026.3.1/core.css" />
+    <script type="module" src="https://pyscript.net/releases/2026.3.1/core.js"></script>
+
+    <title>Seatwork 2</title>
+
+    <style>
+        body {
+            background-color: #ffc0cb;
+            font-family: Arial;
+        }
+
+        .container {
+            width: 400px;
+            margin: 80px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        button {
+            margin: 8px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: none;
+            background: #ff69b4;
+            color: white;
+            cursor: pointer;
+        }
+
+        #listContainer {
+            display: none;
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        .item {
+            background: #ffe4ec;
+            margin: 5px 0;
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        #listContainer {
+            display: none;
+            margin-top: 15px;
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed; 
+        }
+
+        th, td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #ffb6c1;
+        }
+
+        tr:nth-child(even) {
+            background: #ffe4ec;
+        }
+        th, td {
+            width: 33.33%;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Classmates</h2>
+
+    <input id="nameInput" placeholder="Enter name">
+    <input id="sectionInput" placeholder="Enter section">
+    <input id="subjectInput" placeholder="Enter favorite subject">
+
+    <br>
+
+    <button py-click="add_classmate">Add Classmate</button>
+    <button py-click="toggle_list">Show Classmates</button>
+
+    <table id="listContainer">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Section</th>
+            <th>Favorite Subject</th>
+        </tr>
+    </thead>
+    <tbody id="listBody"></tbody>
+    </table>
+</div>
+
+<py-script src='main.py'></py-script>
+
+</body>
+</html>
